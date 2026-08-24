@@ -1,4 +1,4 @@
-From 445688be5f6983ee3df0400aa803e4894c2fdf2e Mon Sep 17 00:00:00 2001
+From 4490d08d9367ee336cf7e46480c353c5c8b23317 Mon Sep 17 00:00:00 2001
 From: Karan <kpalav098@gmail.com>
 Date: Mon, 24 Aug 2026 08:55:29 +0000
 Subject: [PATCH] marble: Add custom Axion device changes
@@ -8,8 +8,8 @@ Subject: [PATCH] marble: Add custom Axion device changes
  configs/ax_kernel_manager.xml | 34 ++++++++++++++++++++++++++++++++++
  device.mk                     |  7 ++++++-
  lineage_marble.mk             |  2 +-
- sepolicy/vendor/genfscon      |  4 ++++
- 5 files changed, 47 insertions(+), 2 deletions(-)
+ sepolicy/vendor/genfscon      |  1 +
+ 5 files changed, 44 insertions(+), 2 deletions(-)
  create mode 100644 configs/ax_kernel_manager.xml
  create mode 100644 sepolicy/vendor/genfscon
 
@@ -100,13 +100,10 @@ index e1c3a25..c597365 100644
  AXION_PROCESSOR := Snapdragon®_7+_Gen_2_(SM7475)
 diff --git a/sepolicy/vendor/genfscon b/sepolicy/vendor/genfscon
 new file mode 100644
-index 0000000..e43c89b
+index 0000000..26e4371
 --- /dev/null
 +++ b/sepolicy/vendor/genfscon
-@@ -0,0 +1,4 @@
-+genfscon proc /sys/vm/dirty_writeback_centisecs u:object_r:proc_dirty:s0
-+genfscon proc /sys/vm/vfs_cache_pressure u:object_r:proc_drop_caches:s0
-+genfscon proc /sys/vm/dirty_ratio u:object_r:proc_dirty:s0
+@@ -0,0 +1 @@
 +genfscon proc /sys/kernel/sched_migration_cost_ns u:object_r:proc_sched:s0
 -- 
 2.43.0
