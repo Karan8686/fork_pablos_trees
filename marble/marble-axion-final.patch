@@ -14,10 +14,15 @@ index a252284..79783ff 100644
 +TARGET_2ND_CPU_ABI :=
 +TARGET_2ND_CPU_ABI2 :=
 diff --git a/lineage_marble.mk b/lineage_marble.mk
-index e1c3a25..c4f5b27 100644
+index e1c3a25..89e6bbc 100644
 --- a/lineage_marble.mk
 +++ b/lineage_marble.mk
-@@ -47,3 +47,6 @@ AXION_MAINTAINER := PabloEscobar
+@@ -43,7 +43,10 @@ TARGET_INCLUDES_LOS_PREBUILTS := true
+ TARGET_NEEDS_VULKAN_MEDIA_FIX := true
+ 
+ # Maintainer name (underscores become spaces in the UI)
+-AXION_MAINTAINER := PabloEscobar
++AXION_MAINTAINER := Karan69
  
  # Processor name (underscores become spaces)
  AXION_PROCESSOR := Snapdragon®_7+_Gen_2_(SM7475)

@@ -1,0 +1,62 @@
+diff --git a/common.mk b/common.mk
+index 69ec634..e265cc3 100644
+--- a/common.mk
++++ b/common.mk
+@@ -5,7 +5,7 @@
+ #
+ 
+ # Inherit from those products. Most specific first.
+-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
++$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+ TARGET_SUPPORTS_OMX_SERVICE := false
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+ 
+diff --git a/properties/vendor.prop b/properties/vendor.prop
+index 4b10402..437f3af 100644
+--- a/properties/vendor.prop
++++ b/properties/vendor.prop
+@@ -120,12 +120,42 @@ vendor.gatekeeper.disable_spu=true
+ # Graphics
+ debug.egl.hw=0
+ debug.sf.auto_latch_unsignaled=0
+-debug.sf.disable_client_composition_cache=0
++debug.sf.disable_client_composition_cache=1
++debug.sf.early.app.duration.120=11666666
++debug.sf.early.app.duration.144=10111110
++debug.sf.early.app.duration.60=16666666
++debug.sf.early.app.duration.90=16222222
++debug.sf.early.app.duration=13666666
++debug.sf.early.sf.duration.120=12333333
++debug.sf.early.sf.duration.144=9722222
++debug.sf.early.sf.duration.60=15666666
++debug.sf.early.sf.duration.90=16111111
++debug.sf.early.sf.duration=15666666
++debug.sf.earlyGl.app.duration.120=11666666
++debug.sf.earlyGl.app.duration.144=10111110
++debug.sf.earlyGl.app.duration.60=16666666
++debug.sf.earlyGl.app.duration.90=16222222
++debug.sf.earlyGl.app.duration=13666666
++debug.sf.earlyGl.sf.duration.120=12333333
++debug.sf.earlyGl.sf.duration.144=9722222
++debug.sf.earlyGl.sf.duration.60=15666666
++debug.sf.earlyGl.sf.duration.90=16111111
++debug.sf.earlyGl.sf.duration=15666666
+ debug.sf.enable_gl_backpressure=1
+-debug.sf.enable_hwc_vds=0
++debug.sf.enable_hwc_vds=1
+ debug.sf.frame_rate_multiple_threshold=120
+ debug.sf.hw=0
+ debug.sf.latch_unsignaled=1
++debug.sf.late.app.duration.120=11666666
++debug.sf.late.app.duration.144=10111110
++debug.sf.late.app.duration.60=16666666
++debug.sf.late.app.duration.90=16222222
++debug.sf.late.app.duration=13666666
++debug.sf.late.sf.duration.120=12333333
++debug.sf.late.sf.duration.144=9722222
++debug.sf.late.sf.duration.60=15666666
++debug.sf.late.sf.duration.90=16111111
++debug.sf.late.sf.duration=15666666
+ debug.sf.predict_hwc_composition_strategy=0
+ debug.sf.set_idle_timer_ms=1000
+ debug.sf.treat_170m_as_sRGB=1
