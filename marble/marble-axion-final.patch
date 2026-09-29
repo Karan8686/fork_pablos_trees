@@ -1,0 +1,26 @@
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index a252284..79783ff 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -34,3 +34,10 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
+ 
+ # Screen density
+ TARGET_SCREEN_DENSITY := 440
++BOARD_VENDOR_SEPOLICY_DIRS += device/xiaomi/marble/sepolicy/vendor
++
++# 64-bit only - disable secondary 32-bit architecture
++TARGET_2ND_ARCH :=
++TARGET_2ND_ARCH_VARIANT :=
++TARGET_2ND_CPU_ABI :=
++TARGET_2ND_CPU_ABI2 :=
+diff --git a/lineage_marble.mk b/lineage_marble.mk
+index e1c3a25..c4f5b27 100644
+--- a/lineage_marble.mk
++++ b/lineage_marble.mk
+@@ -47,3 +47,6 @@ AXION_MAINTAINER := PabloEscobar
+ 
+ # Processor name (underscores become spaces)
+ AXION_PROCESSOR := Snapdragon®_7+_Gen_2_(SM7475)
++
++# 64-bit only
++TARGET_INCLUDE_GOOGLE_TELECOMM := false
